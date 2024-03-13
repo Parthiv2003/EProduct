@@ -1,0 +1,138 @@
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+body {
+    min-height: 100vh;
+    background: #131313;
+}
+
+.container {
+    position: relative;
+    display: flex; 
+    flex-wrap: wrap; 
+    justify-content: space-around; 
+}
+
+.container .card {
+    position: relative;
+    width: 30%;
+    height: 35em;
+    background: #232323;
+    border-radius: 20px;
+    overflow: hidden;
+    margin: 3% 0%;
+}
+
+.container .card:before {
+    content: '';
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background: #9bdc28;
+    clip-path: circle(10em at 80% 20%);
+    transition: 0.5s ease-in-out;
+}
+
+.container .card:hover:before {
+    clip-path: circle(20em at 80% -20%);
+}
+
+.container .card:after {
+    content: 'EP';
+    position: absolute;
+    top: 30%;
+    left: -5%;
+    font-size: 12em;
+    font-weight: 800;
+    font-style: italic;
+    color: rgba(255, 255, 25, 0.05)
+}
+
+.container .card .imgBx {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    z-index: 2;
+    width: 100%;
+    height: 17em;
+    transition: 0.5s;
+}
+
+.container .card:hover .imgBx {
+    top: 0%;
+    transform: translateY(0%);
+}
+
+.container .card .imgBx img {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%) rotate(-25deg);
+    width: 17em;
+}
+
+.container .card .contentBx {
+    position: absolute;
+    bottom: 0;
+    width: 100%;
+    height: 10em;
+    text-align: center;
+    transition: 1s;
+    z-index: 10;
+}
+
+.container .card:hover .contentBx {
+    height: 17em;
+}
+
+.container .card .contentBx h2 {
+    position: relative;
+    font-weight: 600;
+    letter-spacing: 1px;
+    color: #fff;
+    margin: 0;
+}
+
+.container .card .contentBx .size,
+.container .card .contentBx .color {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 8px 20px;
+    transition: 0.5s;
+    opacity: 0;
+    visibility: hidden;
+    padding-top: 0;
+    padding-bottom: 0;
+}
+
+.container .card:hover .contentBx .size {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.5s;
+}
+
+.container .card:hover .contentBx .color {
+    opacity: 1;
+    visibility: visible;
+    transition-delay: 0.6s;
+}
+
+.container .card .contentBx .size h3,
+.container .card .contentBx .color h3 {
+    color: #fff;
+    font-weight: 600;
+    font-size: 16px;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    margin-right: 10px;
+}
+
+.container .card:hover .contentBx a {
+    opacity: 1;
+    transform: translateY(0px);
+    transition-delay: 0.75s;
+}
